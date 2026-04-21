@@ -1,0 +1,105 @@
+---
+- # ====== Breadcrumb: Breadcrumb ==============================
+  id: 10332878420087846
+  identification: 
+    name: Breadcrumb
+
+  entries: 
+  - # ====== Entry: Home =========================================
+    id: 10333060260087846
+    identification: 
+      name: Home
+      page-number: 1
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+        page: 1 # Home
+
+  - # ====== Entry: Dashboard ====================================
+    id: 10367013304087916
+    identification: 
+      name: Dashboard
+      page-number: 2
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
+        page: 2 # Dashboard
+
+  - # ====== Entry: Customers ====================================
+    id: 10379803435087959
+    identification: 
+      name: Customers
+      page-number: 3
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:3:&APP_SESSION.::&DEBUG.:::'
+        page: 3 # Customers
+
+  - # ====== Entry: Order Search =================================
+    id: 10401974740088246
+    identification: 
+      name: Order Search
+      page-number: 5
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:5:&APP_SESSION.::&DEBUG.:::'
+        page: 5 # Order Search
+
+  - # ====== Entry: Orders Calendar ==============================
+    id: 10429790208088305
+    identification: 
+      name: Orders Calendar
+      page-number: 7
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:7:&APP_SESSION.::&DEBUG.:::'
+        page: 7 # Orders Calendar
+
+  - # ====== Entry: Employees ====================================
+    id: 10441634014088329
+    identification: 
+      name: Employees
+      page-number: 8
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:8:&APP_SESSION.::&DEBUG.:::'
+        page: 8 # Employees
+
+  - # ====== Entry: Administration ===============================
+    id: 10796163964095123
+    identification: 
+      name: Administration
+      page-number: 10000
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:10000:&APP_SESSION.::&DEBUG.:::'
+        page: 10000 # Administration
+
