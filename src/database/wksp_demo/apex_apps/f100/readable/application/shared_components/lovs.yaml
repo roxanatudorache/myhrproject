@@ -1,0 +1,343 @@
+---
+- # ====== List of Values: OEHR_EMPLOYEES.FIRST_NAME ===========
+  id: 10900000710562361
+  identification: 
+    name: OEHR_EMPLOYEES.FIRST_NAME
+
+  subscription: 
+    version-number: 46799228902491
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: OEHR_EMPLOYEES
+
+  column-mapping: 
+    return: EMPLOYEE_ID
+    display: FIRST_NAME
+    default-sort: FIRST_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: OEHR_CUSTOMERS.CUST_FIRST_NAME ======
+  id: 10928182456562664
+  identification: 
+    name: OEHR_CUSTOMERS.CUST_FIRST_NAME
+
+  subscription: 
+    version-number: 46799228936225
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: OEHR_CUSTOMERS
+
+  column-mapping: 
+    return: CUSTOMER_ID
+    display: CUST_FIRST_NAME
+    default-sort: CUST_FIRST_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: OEHR_JOBS.JOB_TITLE =================
+  id: 10962696809562828
+  identification: 
+    name: OEHR_JOBS.JOB_TITLE
+
+  subscription: 
+    version-number: 46799228954409
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: OEHR_JOBS
+
+  column-mapping: 
+    return: JOB_ID
+    display: JOB_TITLE
+    default-sort: JOB_TITLE
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: OEHR_DEPARTMENTS.DEPARTMENT_NAME ====
+  id: 10963797952562830
+  identification: 
+    name: OEHR_DEPARTMENTS.DEPARTMENT_NAME
+
+  subscription: 
+    version-number: 46799228954620
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: OEHR_DEPARTMENTS
+
+  column-mapping: 
+    return: DEPARTMENT_ID
+    display: DEPARTMENT_NAME
+    default-sort: DEPARTMENT_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: OEHR_REGIONS.REGION_NAME ============
+  id: 10997849793565012
+  identification: 
+    name: OEHR_REGIONS.REGION_NAME
+
+  subscription: 
+    version-number: 46799229236237
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: OEHR_REGIONS
+
+  column-mapping: 
+    return: REGION_ID
+    display: REGION_NAME
+    default-sort: REGION_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: OEHR_LOCATIONS.STREET_ADDRESS =======
+  id: 11009623371565953
+  identification: 
+    name: OEHR_LOCATIONS.STREET_ADDRESS
+
+  subscription: 
+    version-number: 46799229351606
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: OEHR_LOCATIONS
+
+  column-mapping: 
+    return: LOCATION_ID
+    display: STREET_ADDRESS
+    default-sort: STREET_ADDRESS
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: DESKTOP THEME STYLES ================
+  id: 11163144772569068
+  identification: 
+    name: DESKTOP THEME STYLES
+
+  subscription: 
+    version-number: 46799251960387
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select s.name d,
+             s.theme_style_id r
+        from apex_application_theme_styles s,
+             apex_application_themes t
+       where s.application_id = :app_id
+         and t.application_id = s.application_id
+         and t.theme_number   = s.theme_number
+         and t.is_current     = 'Yes'
+       order by 1
+
+  column-mapping: 
+    return: R
+    display: D
+    default-sort: Use Order By from Query
+
+- # ====== List of Values: USER_THEME_PREFERENCE ===============
+  id: 11163855964569076
+  identification: 
+    name: USER_THEME_PREFERENCE
+
+  subscription: 
+    version-number: 46799251960898
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: Allow End Users to choose Theme Style ========
+    id: 11164128306569076
+    entry: 
+      sequence: 1
+      display: Allow End Users to choose Theme Style
+      return: Yes
+
+- # ====== List of Values: TIMEFRAME (4 WEEKS) =================
+  id: 11182773681569119
+  identification: 
+    name: TIMEFRAME (4 WEEKS)
+
+  subscription: 
+    version-number: 46799251966072
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select disp,
+             val as seconds
+        from table( apex_util.get_timeframe_lov_data )
+       order by insert_order
+
+  column-mapping: 
+    return: SECONDS
+    display: DISP
+    default-sort: Use Order By from Query
+
+- # ====== List of Values: VIEW_AS_REPORT_CHART ================
+  id: 11230361330569234
+  identification: 
+    name: VIEW_AS_REPORT_CHART
+
+  subscription: 
+    version-number: 46799251979733
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: Add Report Page ==============================
+    id: 11230684573569235
+    entry: 
+      sequence: 1
+      display: Add Report Page
+      return: REPORT
+
+    globalization: 
+      template: <span class="fa fa-table" aria-hidden="true"></span><span class="u-VisuallyHidden">#DISPLAY_VALUE#</span>
+
+  - # ====== Entry: Add Chart Page ===============================
+    id: 11231092934569236
+    entry: 
+      sequence: 2
+      display: Add Chart Page
+      return: CHART
+
+    globalization: 
+      template: <span class="fa fa-pie-chart" aria-hidden="true"></span><span class="u-VisuallyHidden">#DISPLAY_VALUE#</span>
+
+- # ====== List of Values: ACCESS_ROLES ========================
+  id: 11263589926569309
+  identification: 
+    name: ACCESS_ROLES
+
+  subscription: 
+    version-number: 46799251989634
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select role_name d, role_id r
+      from APEX_APPL_ACL_ROLES where application_id = :APP_ID 
+      order by 1
+
+  column-mapping: 
+    return: R
+    display: D
+    default-sort: Use Order By from Query
+
+- # ====== List of Values: EMAIL_USERNAME_FORMAT ===============
+  id: 11271014333569325
+  identification: 
+    name: EMAIL_USERNAME_FORMAT
+
+  subscription: 
+    version-number: 46799251991497
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: Email Addresses ==============================
+    id: 11271375003569325
+    entry: 
+      sequence: 1
+      display: Email Addresses
+      return: EMAIL
+
+- # ====== List of Values: FEEDBACK_RATING =====================
+  id: 11288341850569362
+  identification: 
+    name: FEEDBACK_RATING
+
+  subscription: 
+    version-number: 46799251995993
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: Positive =====================================
+    id: 11288622620569363
+    entry: 
+      sequence: 1
+      display: Positive
+      return: 3
+
+    globalization: 
+      template: <span title="#DISPLAY_VALUE#" aria-label="#DISPLAY_VALUE#"><span class="fa fa-smile-o fa-2x feedback-positive" aria-hidden="true" ></span></span>
+
+  - # ====== Entry: Neutral ======================================
+    id: 11289099566569363
+    entry: 
+      sequence: 2
+      display: Neutral
+      return: 2
+
+    globalization: 
+      template: <span title="#DISPLAY_VALUE#" aria-label="#DISPLAY_VALUE#"><span class="fa fa-emoji-neutral fa-2x feedback-neutral" aria-hidden="true" ></span></span>
+
+  - # ====== Entry: Negative =====================================
+    id: 11289427579569364
+    entry: 
+      sequence: 3
+      display: Negative
+      return: 1
+
+    globalization: 
+      template: <span title="#DISPLAY_VALUE#" aria-label="#DISPLAY_VALUE#"><span class="fa fa-frown-o fa-2x feedback-negative" aria-hidden="true" ></span></span>
+
+- # ====== List of Values: FEEDBACK_STATUS =====================
+  id: 11300693657569382
+  identification: 
+    name: FEEDBACK_STATUS
+
+  subscription: 
+    version-number: 46799251998195
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: No Action ====================================
+    id: 11300906036569382
+    entry: 
+      sequence: 1
+      display: No Action
+      return: 0
+
+  - # ====== Entry: Acknowledged =================================
+    id: 11301366749569383
+    entry: 
+      sequence: 2
+      display: Acknowledged
+      return: 1
+
+  - # ====== Entry: Open =========================================
+    id: 11301787471569383
+    entry: 
+      sequence: 3
+      display: Open
+      return: 3
+
+  - # ====== Entry: Closed =======================================
+    id: 11302127911569384
+    entry: 
+      sequence: 4
+      display: Closed
+      return: 4
+

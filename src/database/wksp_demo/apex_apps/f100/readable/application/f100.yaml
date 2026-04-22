@@ -1,0 +1,306 @@
+---
+# ====== Application: Demonstration - HR =====================
+id: 100
+identification: 
+  name: Demonstration - HR
+  alias: DEMONSTRATION-HR
+  version: Release 1.0
+
+row-search: 
+  tokenize: true
+  text-query-function: None
+
+availability: 
+  status: Available with Developer Toolbar
+  build-status: Run and Build Application
+
+error-handling: 
+  default-display-location: Inline with Field and in Notification
+
+report-printing: 
+  type: Native Printing
+
+advanced: 
+  friendly-urls: true
+  allow-feedback: true
+  logging: true
+  debugging: true
+  compatibility-mode: 24.2
+  accessible-read-only-items: true
+  pass-ecid: Y
+
+authentication: 
+  public-user: APEX_PUBLIC_USER
+  authentication-scheme: Oracle APEX Accounts # 10863550422562171
+
+authorization: 
+  authorization-scheme: Reader Rights # 10870717449562254
+  run-on-public-pages: false
+  run-on-background-job: true
+  source-for-role-or-group-schemes: Access Control User Role Assignments
+
+session-management: 
+  rejoin-sessions: Disabled
+
+session-state-protection: 
+  enabled: true
+
+security: 
+  deep-linking: Disabled
+  browser-cache: Disabled
+  embed-in-frames: Deny
+  referrer-policy: strict-origin
+  html-escaping-mode: Extended
+  runtime-api-usage: 
+  - Modify This Application
+
+database-session: 
+  parsing-schema: WKSP_DEMO
+
+globalization: 
+  primary-language: English (en)
+  document-direction: Language Default
+  language-derived-from: Application Primary Language
+  automatic-time-zone: false
+  automatic-csv-encoding: true
+
+application-format-masks: 
+  date: DS
+  timestamp: DS
+  timestamp-time-zone: DS
+
+character-value-comparison: 
+  behavior: Database session NLS setting (default)
+
+logo: 
+  type: Text
+  text: Demonstration - HR
+
+progressive-web-app: 
+  enable: true
+  installable: true
+  display: Standalone
+  screen-orientation: Any
+  ios-status-bar-style: Default
+  enable-push-notifications: true
+  pwa-push-notifications-credentials: App 100 Push Notifications Credentials (4) # 11355019881569504
+
+navigation: 
+  home-url: 
+    url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+    page: 1 # Home
+
+  login-url: 
+    url: 'f?p=&APP_ID.:LOGIN:&APP_SESSION.::&DEBUG.:::'
+    page: LOGIN
+
+navigation-menu: 
+  list-template: Side Navigation Menu
+  template-options: 
+  - '#DEFAULT#'
+  - t-TreeNav--styleA
+  - js-navCollapsed--hidden
+  list-position: Side
+  list: Navigation Menu # 10864383628562176
+
+navigation-bar: 
+  implementation: List
+  list: Navigation Bar # 10865433769562203
+  list-template: Navigation Bar
+  template-options: 
+  - '#DEFAULT#'
+
+javascript: 
+  include-jquery-migrate: false
+
+attributes: 
+  theme: Universal Theme # 42
+  global-page: 0
+  enable-end-users-to-choose-theme-style: false
+  add-"built-with-apex"-to-footer: true
+  auto-dismiss-success-messages: false
+
+subscription: 
+  version-number: 46799252015083
+
+substitutions: 
+- # ====== Substitution: APP_NAME ==============================
+  id: 1
+  identification: 
+    name: APP_NAME
+
+  value: 
+    static-value: Demonstration - HR
+
+component-settings: 
+- # ====== Component Setting: NATIVE_DISPLAY_SELECTOR ==========
+  id: 10859005871562161
+  identification: 
+    name: NATIVE_DISPLAY_SELECTOR
+    type: Region
+
+  subscription: 
+    version-number: 46799228878309
+
+- # ====== Component Setting: NATIVE_ADFBC =====================
+  id: 10859391261562163
+  identification: 
+    name: NATIVE_ADFBC
+    type: REST Data Source
+
+  subscription: 
+    version-number: 46799228878599
+
+- # ====== Component Setting: NATIVE_DATE_PICKER_APEX ==========
+  id: 10859680004562164
+  identification: 
+    name: NATIVE_DATE_PICKER_APEX
+    type: Item
+
+  subscription: 
+    version-number: 46799228878670
+
+- # ====== Component Setting: NATIVE_SELECT_MANY ===============
+  id: 10859975898562164
+  identification: 
+    name: NATIVE_SELECT_MANY
+    type: Item
+
+  subscription: 
+    version-number: 46799228878728
+
+- # ====== Component Setting: NATIVE_MAP_REGION ================
+  id: 10860269935562165
+  identification: 
+    name: NATIVE_MAP_REGION
+    type: Region
+
+  subscription: 
+    version-number: 46799228878788
+
+- # ====== Component Setting: NATIVE_GEOCODING =================
+  id: 10860500670562165
+  identification: 
+    name: NATIVE_GEOCODING
+    type: Process
+
+  settings: 
+    attribute-1: RELAX_HOUSE_NUMBER
+
+  subscription: 
+    version-number: 46799228878891
+
+- # ====== Component Setting: NATIVE_SINGLE_CHECKBOX ===========
+  id: 10860841324562166
+  identification: 
+    name: NATIVE_SINGLE_CHECKBOX
+    type: Item
+
+  subscription: 
+    version-number: 46799228878983
+
+- # ====== Component Setting: NATIVE_COLOR_PICKER ==============
+  id: 10861120782562166
+  identification: 
+    name: NATIVE_COLOR_PICKER
+    type: Item
+
+  subscription: 
+    version-number: 46799228879029
+
+- # ====== Component Setting: NATIVE_STAR_RATING ===============
+  id: 10861496821562167
+  identification: 
+    name: NATIVE_STAR_RATING
+    type: Item
+
+  subscription: 
+    version-number: 46799228879100
+
+- # ====== Component Setting: NATIVE_GEOCODED_ADDRESS ==========
+  id: 10861711566562167
+  identification: 
+    name: NATIVE_GEOCODED_ADDRESS
+    type: Item
+
+  subscription: 
+    version-number: 46799228879181
+
+- # ====== Component Setting: NATIVE_IR ========================
+  id: 10862049365562168
+  identification: 
+    name: NATIVE_IR
+    type: Region
+
+  subscription: 
+    version-number: 46799228879258
+
+- # ====== Component Setting: NATIVE_OPEN_AI_ASSISTANT =========
+  id: 10862376798562168
+  identification: 
+    name: NATIVE_OPEN_AI_ASSISTANT
+    type: Dynamic Action
+
+  subscription: 
+    version-number: 46799228879370
+
+- # ====== Component Setting: NATIVE_BOSS ======================
+  id: 10862641420562169
+  identification: 
+    name: NATIVE_BOSS
+    type: REST Data Source
+
+  subscription: 
+    version-number: 46799228879486
+
+- # ====== Component Setting: NATIVE_YES_NO ====================
+  id: 10862938856562169
+  identification: 
+    name: NATIVE_YES_NO
+    type: Item
+
+  subscription: 
+    version-number: 46799228879616
+
+application-settings: 
+- # ====== Application Setting: FEEDBACK_ATTACHMENTS_YN ========
+  id: 10871689320562259
+  identification: 
+    name: FEEDBACK_ATTACHMENTS_YN
+
+  value: 
+    value: Y
+    required: false
+
+  advanced: 
+    valid-values: Y, N
+    on-upgrade-keep-value: true
+
+  subscription: 
+    version-number: 46799228890948
+
+  configuration: 
+    build-option: 'Feature: Feedback' # 10868127274562247
+
+- # ====== Application Setting: ACCESS_CONTROL_SCOPE ===========
+  id: 10871999302562259
+  identification: 
+    name: ACCESS_CONTROL_SCOPE
+
+  value: 
+    value: ACL_ONLY
+    required: false
+
+  advanced: 
+    valid-values: ACL_ONLY, ALL_USERS
+    on-upgrade-keep-value: true
+
+  subscription: 
+    version-number: 46799228891085
+
+  configuration: 
+    build-option: 'Feature: Access Control' # 10867929119562247
+
+  comments: 
+    comments: The default access level given to authenticated users who are not in the access control list
+
