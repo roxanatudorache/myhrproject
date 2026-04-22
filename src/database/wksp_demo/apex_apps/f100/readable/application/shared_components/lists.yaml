@@ -5,7 +5,7 @@
     name: Navigation Menu
 
   subscription: 
-    version-number: 46799252004530
+    version-number: 46799431909849
 
   source: 
     type: Static Values
@@ -213,6 +213,33 @@
 
     security: 
       authorization-scheme: Administration Rights # 10870666062562254
+
+  - # ====== Entry: Jobs =========================================
+    id: 11359365392779755
+    label: 
+      label: Jobs
+
+    icon: 
+      image/icon-css-classes: fa-table
+
+    layout: 
+      sequence: 80
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 22
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:22:&APP_SESSION.::&DEBUG.:::'
+        page: 22 # Jobs
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
 
 - # ====== List: Navigation Bar ================================
   id: 10865433769562203

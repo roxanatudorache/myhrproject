@@ -614,7 +614,8 @@ regions:
 
     advanced: 
       show-chart-initially: false
-      collapsible: false
+      collapsible: true
+      initially-collapsed: true
 
     source: 
       database-column: JOB_ID
@@ -663,7 +664,8 @@ regions:
 
     advanced: 
       show-chart-initially: false
-      collapsible: false
+      collapsible: true
+      initially-collapsed: true
 
     source: 
       database-column: MANAGER_ID
@@ -712,7 +714,8 @@ regions:
 
     advanced: 
       show-chart-initially: false
-      collapsible: false
+      collapsible: true
+      initially-collapsed: true
 
     source: 
       database-column: DEPARTMENT_ID
@@ -761,7 +764,8 @@ regions:
 
     advanced: 
       show-chart-initially: false
-      collapsible: false
+      collapsible: true
+      initially-collapsed: true
 
     source: 
       database-column: LAST_NAME
@@ -812,7 +816,8 @@ regions:
 
     advanced: 
       show-chart-initially: false
-      collapsible: false
+      collapsible: true
+      initially-collapsed: true
 
     source: 
       database-column: COMMISSION_PCT

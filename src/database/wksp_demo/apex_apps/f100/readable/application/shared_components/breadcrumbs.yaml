@@ -103,3 +103,17 @@
         url: 'f?p=&APP_ID.:10000:&APP_SESSION.::&DEBUG.:::'
         page: 10000 # Administration
 
+  - # ====== Entry: Jobs =========================================
+    id: 11360220113779761
+    identification: 
+      name: Jobs
+      page-number: 22
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:22:&APP_SESSION.::&DEBUG.:::'
+        page: 22 # Jobs
+
