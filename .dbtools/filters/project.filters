@@ -60,8 +60,8 @@ object_name not like 'I_SNAP$%',
 
 
 --rp 
-object_name not like 'DBTOOLS$%'
-object_type not in ('MLE_MODULE', 'MLE_ENVIRONMENT')
+object_name not like 'DBTOOLS$%',
+object_type not in ('MLE_MODULE', 'MLE_ENVIRONMENT'),
 
 export_type != 'ALL_TAB_PRIVS',
 
