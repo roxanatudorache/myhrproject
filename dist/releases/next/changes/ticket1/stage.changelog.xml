@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+<include file="sys/object_grants/object_grants_as_grantor.sys.mle_language.javascript.to_wksp_demo.sql" relativeToChangelogFile="true"/>
+<include file="wksp_demo/tables/dept.sql" relativeToChangelogFile="true"/>
+<include file="wksp_demo/tables/emp.sql" relativeToChangelogFile="true"/>
+<include file="wksp_demo/indexes/idx_emp_deptid.sql" relativeToChangelogFile="true"/>
+</databaseChangeLog>
