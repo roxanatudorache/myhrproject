@@ -47,3 +47,17 @@
         url: 'f?p=&APP_ID.:4:&APP_SESSION.::&DEBUG.:::'
         page: 4 # Dept
 
+  - # ====== Entry: dep ==========================================
+    id: 11854535199903156
+    identification: 
+      name: dep
+      page-number: 6
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:6:&APP_SESSION.::&DEBUG.:::'
+        page: 6 # dep
+
