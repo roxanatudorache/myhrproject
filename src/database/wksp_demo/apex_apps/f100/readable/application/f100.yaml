@@ -115,7 +115,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 46814212875121
+  version-number: 46815132595515
 
 substitutions: 
 - # ====== Substitution: APP_NAME ==============================
