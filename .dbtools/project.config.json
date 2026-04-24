@@ -6,7 +6,7 @@
     "version" : "26.1.0.0"
   },
   "schemas" : [ "WKSP_DEMO" ],
-  "lastReleaseVersion" : "1.4",
+  "lastReleaseVersion" : "1.6",
   "export" : {
     "format" : {
       "enable" : true
