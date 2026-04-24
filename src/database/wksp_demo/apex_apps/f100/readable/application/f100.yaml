@@ -1,0 +1,258 @@
+---
+# ====== Application: Create_Tables ==========================
+id: 100
+identification: 
+  name: Create_Tables
+  alias: CREATE-TABLES
+  version: Release 1.0
+
+row-search: 
+  tokenize: true
+  text-query-function: None
+
+availability: 
+  status: Available with Developer Toolbar
+  build-status: Run and Build Application
+
+error-handling: 
+  default-display-location: Inline with Field and in Notification
+
+report-printing: 
+  type: Native Printing
+
+advanced: 
+  friendly-urls: true
+  allow-feedback: true
+  logging: true
+  debugging: true
+  compatibility-mode: 24.2
+  accessible-read-only-items: true
+  pass-ecid: Y
+
+authentication: 
+  public-user: APEX_PUBLIC_USER
+  authentication-scheme: Oracle APEX Accounts # 12013085262414899
+
+authorization: 
+  source-for-role-or-group-schemes: Access Control User Role Assignments
+
+session-management: 
+  rejoin-sessions: Disabled
+
+session-state-protection: 
+  enabled: true
+
+security: 
+  deep-linking: Disabled
+  browser-cache: Disabled
+  embed-in-frames: Deny
+  referrer-policy: strict-origin
+  html-escaping-mode: Extended
+
+database-session: 
+  parsing-schema: WKSP_DEMO
+
+globalization: 
+  primary-language: English (en)
+  document-direction: Language Default
+  language-derived-from: Application Primary Language
+  automatic-time-zone: false
+  automatic-csv-encoding: true
+
+application-format-masks: 
+  date: DS
+  timestamp: DS
+  timestamp-time-zone: DS
+
+character-value-comparison: 
+  behavior: Database session NLS setting (default)
+
+logo: 
+  type: Text
+  text: Create_Tables
+
+progressive-web-app: 
+  enable: true
+  installable: false
+  display: Standalone
+  screen-orientation: Any
+  ios-status-bar-style: Default
+  enable-push-notifications: false
+
+navigation: 
+  home-url: 
+    url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+    page: 1 # Home
+
+  login-url: 
+    url: 'f?p=&APP_ID.:LOGIN:&APP_SESSION.::&DEBUG.:::'
+    page: LOGIN
+
+navigation-menu: 
+  list-template: Side Navigation Menu
+  template-options: 
+  - '#DEFAULT#'
+  - t-TreeNav--styleA
+  - js-navCollapsed--hidden
+  list-position: Side
+  list: Navigation Menu # 12013853887414898
+
+navigation-bar: 
+  implementation: List
+  list: Navigation Bar # 12015065150414889
+  list-template: Navigation Bar
+  template-options: 
+  - '#DEFAULT#'
+
+javascript: 
+  include-jquery-migrate: false
+
+attributes: 
+  theme: Universal Theme # 42
+  global-page: 0
+  enable-end-users-to-choose-theme-style: false
+  add-"built-with-apex"-to-footer: false
+  auto-dismiss-success-messages: false
+
+subscription: 
+  version-number: 46816849320892
+
+substitutions: 
+- # ====== Substitution: APP_NAME ==============================
+  id: 1
+  identification: 
+    name: APP_NAME
+
+  value: 
+    static-value: Create_Tables
+
+component-settings: 
+- # ====== Component Setting: NATIVE_DISPLAY_SELECTOR ==========
+  id: 12008588954414908
+  identification: 
+    name: NATIVE_DISPLAY_SELECTOR
+    type: Region
+
+  subscription: 
+    version-number: 46816849132388
+
+- # ====== Component Setting: NATIVE_ADFBC =====================
+  id: 12008875141414905
+  identification: 
+    name: NATIVE_ADFBC
+    type: REST Data Source
+
+  subscription: 
+    version-number: 46816849132718
+
+- # ====== Component Setting: NATIVE_DATE_PICKER_APEX ==========
+  id: 12009168541414905
+  identification: 
+    name: NATIVE_DATE_PICKER_APEX
+    type: Item
+
+  subscription: 
+    version-number: 46816849132778
+
+- # ====== Component Setting: NATIVE_SELECT_MANY ===============
+  id: 12009481959414904
+  identification: 
+    name: NATIVE_SELECT_MANY
+    type: Item
+
+  subscription: 
+    version-number: 46816849132826
+
+- # ====== Component Setting: NATIVE_MAP_REGION ================
+  id: 12009726033414904
+  identification: 
+    name: NATIVE_MAP_REGION
+    type: Region
+
+  subscription: 
+    version-number: 46816849132874
+
+- # ====== Component Setting: NATIVE_GEOCODING =================
+  id: 12010004075414904
+  identification: 
+    name: NATIVE_GEOCODING
+    type: Process
+
+  settings: 
+    attribute-1: RELAX_HOUSE_NUMBER
+
+  subscription: 
+    version-number: 46816849132922
+
+- # ====== Component Setting: NATIVE_SINGLE_CHECKBOX ===========
+  id: 12010365446414903
+  identification: 
+    name: NATIVE_SINGLE_CHECKBOX
+    type: Item
+
+  subscription: 
+    version-number: 46816849132964
+
+- # ====== Component Setting: NATIVE_COLOR_PICKER ==============
+  id: 12010642690414903
+  identification: 
+    name: NATIVE_COLOR_PICKER
+    type: Item
+
+  subscription: 
+    version-number: 46816849133042
+
+- # ====== Component Setting: NATIVE_STAR_RATING ===============
+  id: 12010998597414902
+  identification: 
+    name: NATIVE_STAR_RATING
+    type: Item
+
+  subscription: 
+    version-number: 46816849133110
+
+- # ====== Component Setting: NATIVE_GEOCODED_ADDRESS ==========
+  id: 12011255130414902
+  identification: 
+    name: NATIVE_GEOCODED_ADDRESS
+    type: Item
+
+  subscription: 
+    version-number: 46816849133173
+
+- # ====== Component Setting: NATIVE_IR ========================
+  id: 12011532366414901
+  identification: 
+    name: NATIVE_IR
+    type: Region
+
+  subscription: 
+    version-number: 46816849133220
+
+- # ====== Component Setting: NATIVE_OPEN_AI_ASSISTANT =========
+  id: 12011849306414901
+  identification: 
+    name: NATIVE_OPEN_AI_ASSISTANT
+    type: Dynamic Action
+
+  subscription: 
+    version-number: 46816849133279
+
+- # ====== Component Setting: NATIVE_BOSS ======================
+  id: 12012102980414901
+  identification: 
+    name: NATIVE_BOSS
+    type: REST Data Source
+
+  subscription: 
+    version-number: 46816849133347
+
+- # ====== Component Setting: NATIVE_YES_NO ====================
+  id: 12012404423414900
+  identification: 
+    name: NATIVE_YES_NO
+    type: Item
+
+  subscription: 
+    version-number: 46816849133405
+
