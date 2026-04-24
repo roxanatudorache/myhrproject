@@ -36,10 +36,10 @@ prompt APPLICATION 100 - Employees
 --   Exported By:     WKSP_DEMO
 --   Flashback:       0
 --   Export Type:     Application Export
---     Pages:                      6
+--     Pages:                      7
 --       Items:                    9
 --       Processes:                7
---       Regions:                 11
+--       Regions:                 13
 --       Buttons:                  7
 --       Dynamic Actions:          2
 --     Shared Components:
@@ -48,7 +48,7 @@ prompt APPLICATION 100 - Employees
 --       Navigation:
 --         Lists:                  3
 --         Breadcrumbs:            1
---           Entries:              3
+--           Entries:              4
 --       Security:
 --         Authentication:         1
 --         Authorization:          1
@@ -106,7 +106,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_value_01=>'Employees'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>6
-,p_version_scn=>46814212875121
+,p_version_scn=>46815132595515
 ,p_print_server_type=>'NATIVE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'Y'
@@ -142,7 +142,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(11952119594794496)
 ,p_name=>'Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>46814212701602
+,p_version_scn=>46815132569690
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(11964442760794588)
@@ -167,6 +167,15 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_link_target=>'f?p=&APP_ID.:3:&APP_SESSION.::&DEBUG.:::'
 ,p_list_item_icon=>'fa-table'
 ,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(12001424975194973)
+,p_list_item_display_sequence=>40
+,p_list_item_link_text=>'dep'
+,p_list_item_link_target=>'f?p=&APP_ID.:5:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-table'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'5'
 );
 end;
 /
@@ -745,6 +754,12 @@ wwv_flow_imp_shared.create_menu_option(
 ,p_short_name=>' Report'
 ,p_link=>'f?p=&APP_ID.:3:&APP_SESSION.::&DEBUG.:::'
 ,p_page_id=>3
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(12002326096194970)
+,p_short_name=>'dep'
+,p_link=>'f?p=&APP_ID.:5:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>5
 );
 end;
 /
@@ -1546,6 +1561,106 @@ wwv_flow_imp_page.create_page_process(
 );
 end;
 /
+prompt --application/pages/page_00005
+begin
+wwv_flow_imp_page.create_page(
+ p_id=>5
+,p_name=>'dep'
+,p_alias=>'DEP'
+,p_step_title=>'dep'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(12001818994194971)
+,p_plug_name=>'Breadcrumb'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>2531463326621247859
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_imp.id(11951680059794492)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>4072363345357175094
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(12002549767194969)
+,p_plug_name=>'dep'
+,p_region_template_options=>'#DEFAULT#:t-IRR-region--hideHeader js-addHiddenHeadingRoleDesc'
+,p_plug_template=>2100526641005906379
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'DEPT'
+,p_include_rowid_column=>false
+,p_plug_source_type=>'NATIVE_IR'
+,p_prn_page_header=>'dep'
+);
+wwv_flow_imp_page.create_worksheet(
+ p_id=>wwv_flow_imp.id(12002608929194969)
+,p_name=>'dep'
+,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
+,p_no_data_found_message=>'No data found.'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'N'
+,p_show_notify=>'Y'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_owner=>'ROXANA'
+,p_internal_uid=>12002608929194969
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12003258549194686)
+,p_db_column_name=>'ID'
+,p_display_order=>0
+,p_is_primary_key=>'Y'
+,p_column_identifier=>'A'
+,p_column_label=>'ID'
+,p_column_type=>'NUMBER'
+,p_display_text_as=>'HIDDEN_ESCAPE_SC'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12003661455194685)
+,p_db_column_name=>'DEPARTMENT_NAME'
+,p_display_order=>2
+,p_column_identifier=>'B'
+,p_column_label=>'Department Name'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12004008255194684)
+,p_db_column_name=>'LOCATION'
+,p_display_order=>3
+,p_column_identifier=>'C'
+,p_column_label=>'Location'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12004402005194683)
+,p_db_column_name=>'TESTDEV'
+,p_display_order=>4
+,p_column_identifier=>'D'
+,p_column_label=>'Testdev'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'RIGHT'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+end;
+/
 prompt --application/pages/page_09999
 begin
 wwv_flow_imp_page.create_page(
@@ -1769,4 +1884,4 @@ prompt  ...done
 
 
 
--- sqlcl_snapshot {"hash":"82cf5d2e602919ddfc092e69697467dea6cb519c","type":"APEX","name":"f100.sql","schemaName":"DEMO","sxml":""}
+-- sqlcl_snapshot {"hash":"cd1186cfa330f3a8f5d546258a8404eb949723c6","type":"APEX","name":"f100.sql","schemaName":"DEMO","sxml":""}
